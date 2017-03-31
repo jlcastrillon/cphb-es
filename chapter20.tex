@@ -1,25 +1,25 @@
 \chapter{Flows and cuts}
 
-In this chapter, we will focus on the following
-two problems:
+En este capítulo, nos concentraremos
+en los dos siguientes problemas:
 
 \begin{itemize}
-\item \key{Finding a maximum flow}:
-What is the maximum amount of flow we can
-send from a node to another node?
-\item \key{Finding a minimum cut}:
-What is a minimum-weight set of edges
-that separates two nodes of the graph?
+\item \key{Encontrar un flujo máximo}:
+Cuál es la mayor cantidad de flujo que se puede
+enviar desde un nodo a otro nodo?
+\item \key{Encontrar un corte mínimo}:
+Cúal es el conjunto de aristas de menor peso
+que separa a dos nodos del grafo?
 \end{itemize}
 
-The input for both these problems is a directed,
-weighted graph that contains two special nodes:
-the \key{source} is a node with no incoming edges,
-and the \key{sink} is a node with no outgoing edges.
+La entrada para ambos problemas es un grafo
+dirigido y pesado que contiene dos nodos especiales:
+La \key{fuente} es un nodo sin aristas entrantes,
+y el \key{sumidero} es un nodo sin aristas salientes.
 
-As an example, we will use the following graph
-where node 1 is the source and node 6
-is the sink:
+Tomemos el siguiente grafo como ejemplo
+donde el nodo 1 es la fuente y el nodo 6
+es el sumidero:
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -40,25 +40,25 @@ is the sink:
 \end{tikzpicture}
 \end{center}
 
-\subsubsection{Maximum flow}
+\subsubsection{Flujo máximo}
 
 \index{flow}
 \index{maximum flow}
 
-In the \key{maximum flow} problem,
-our task is to send as much flow as possible
-from the source to the sink.
-The weight of each edge is a capacity that
-restricts the flow
-that can go through the edge.
-In each intermediate node,
-the incoming and outgoing
-flow has to be equal.
+En el problema del \key{flujo máximo},
+nuestro objetivo es enviar tanto flujo como sea 
+posible desde la fuente hacia el sumidero.
+EL peso de cada arista es una capacidad
+que restringe el flujo
+que puede atravezar la arista.
+En cada nodo intermedio,
+El flujo que entra y el flujo
+que sale tienen que ser iguales.
 
-For example, the size of the maximum flow
-in the example graph is 7.
-The following picture shows how we can
-route the flow:
+Por ejemplo, el flujo máximo 
+en e grafo de ejemplo es 7.
+La siguiente imagen nos muestra
+como podemos encontrar la ruta del flujo:
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -79,32 +79,32 @@ route the flow:
 \end{tikzpicture}
 \end{center}
 
-The notation $v/k$ means
-that a flow of $v$ units is routed through
-an edge whose capacity is $k$ units.
-The size of the flow is $7$,
-because the source sends $3+4$ units of flow
-and the sink receives $5+2$ units of flow.
-It is easy see that this flow is maximum,
-because the total capacity of the edges
-leading to the sink is $7$.
+La notación $v/k$ significa
+que un flujo de $v$ unidades atravieza
+una arista con capacidad de $k$ unidades.
+El tamaño del flujo es $7$,
+ya que la fuente envía $3+4$ unidades de flujo
+y el sumidero recibe $5+2$ unidades de flujo.
+Se puede ver fácilmente que el flujo es máximo,
+porque la capacidad total de las aristas
+que van dirigidas al sumidero es $7$.
 
-\subsubsection{Minimum cut}
+\subsubsection{Corte Mínimo}
 
 \index{cut}
 \index{minimum cut}
 
-In the \key{minimum cut} problem,
-our task is to remove a set
-of edges from the graph
-such that there will be no path from the source
-to the sink after the removal
-and the total weight of the removed edges
-is minimum.
+En el problema del \key{corte mínimo},
+el objetivo es eliminar un conjunto
+de aristas del grafo
+de tal forma que no exista un camino 
+desde la fuente hacia el sumidero
+y que el peso total de las aristas 
+eliminadas sea mínimo.
 
-The size of the minimum cut in the example graph is 7.
-It suffices to remove the edges $2 \rightarrow 3$
-and $4 \rightarrow 5$:
+El tamaño del corte mínimo en el grafo de ejemplo es 7.
+Basta con eliminar las aristas $2 \rightarrow 3$
+y $4 \rightarrow 5$:
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -130,14 +130,14 @@ and $4 \rightarrow 5$:
 \end{tikzpicture}
 \end{center}
 
-After removing the edges,
-there will be no path from the source to the sink.
-The size of the cut is $7$,
-because the weights of the removed edges
-are $6$ and $1$.
-The cut is minimum, because there is no valid
-way to remove edges from the graph such that
-their total weight would be less than $7$.
+Después de eliminar las aristas,
+no hay ningún camino desde la fuente hacia el sumidero.
+El tamaño del corte es $7$,
+debido a que los pesos de las aristas eliminadas
+son $6$ y $1$.
+El corte es mínimo, porque no existe una forma
+válida de eliminar aristas del grafo tal que
+el peso total de las mismas sea menor que $7$.
 \\\\
 It is not a coincidence that
 both the size of the maximum flow and 
@@ -1440,3 +1440,4 @@ This is a maximum antichain, because it is not possible
 to construct any antichain that would contain three nodes.
 We have seen before that the size of a minimum
 general path cover of this graph consists of two paths.
+
